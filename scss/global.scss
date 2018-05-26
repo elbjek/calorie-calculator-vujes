@@ -1,12 +1,13 @@
 // Load Fonts
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
 body {
 	font-family: 'Roboto', sans-serif;
 }
 
 // Global Variables
-$black: #3d3d3d;
-$white: #ededed;
-$light-blue: #6fbfe8;
-$accent-orange: #d6751b;
+/* RGB */
+$red: rgba(237, 37, 78, 1);
+$yellow: rgba(249, 220, 92, 1);
+$white: rgba(244, 255, 253, 1);
+$blue: rgba(1, 25, 54, 1);
+$gray: rgba(70, 83, 98, 1);

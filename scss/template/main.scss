@@ -1,4 +1,15 @@
-main {
-	max-width: 650px;
-	margin: 80px auto 0 auto;
-}
+
+	.counter{
+
+		// height:500px;
+		// width:600px;
+		background-color: $yellow;
+		h1{
+			text-align: center;
+			padding:20px;
+			background-color: $blue;
+			font-size: 25px;
+			color:$white;
+			font-weight: 800;
+		}
+	}
