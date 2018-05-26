@@ -6,21 +6,46 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+	
 	<div id="app">
 		<div class="counter">
 			<h1> MC DONALD'S CALORIE COUNTER</h1>
- 
-<ul>
-	<li><a href=""> Burger </a></li>
-</ul>
+			<div class="countdown">
+				<div class="box">
+					<h2>00</h2>
+					<p>CALORIES</p>
+				</div>
+				<div class="box">
+					<h2>00</h2>
+					<p>FAT</p>
+				</div>
+				<div class="box">
+					<h2>00</h2>
+					<p>CARBS</p>
+				</div>
+				<div class="box">
+					<h2>00</h2>
+					<p>PROTEIN</p>
+				</div>
+			</div>
+	
+			<div class="food">
+				<ul>
+					<li>{{info.PRO}}</li>
+					<li v-for="food in info">{{info}}</li>
 
-<p>burger calories: 656 {{message}}</p>
-
+					<!-- <li>Chicken &amp; Sandwiches</li>
+					<li>Salads</li>
+					<li>Snacks and sides</li> -->
+				</ul>
+			</div>
+			
 		</div>
-
+		
 	</div>
-
+	
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script type="text/javascript" src="scripts/vendor.js"></script>
 	<script type="text/javascript" src="scripts/scripts.min.js"></script>
 </body>

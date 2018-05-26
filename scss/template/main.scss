@@ -1,9 +1,12 @@
-
+body{
+	background-color: $yellow;
 	.counter{
-
 		// height:500px;
-		// width:600px;
-		background-color: $yellow;
+		width:800px;
+		margin:0 auto;
+		background-color: $white;
+		border-radius: 20px;
+		
 		h1{
 			text-align: center;
 			padding:20px;
@@ -12,4 +15,22 @@
 			color:$white;
 			font-weight: 800;
 		}
+		
+		.countdown{
+			display: flex;
+			text-align: center;
+			border-bottom: 2px solid rgba(70, 83, 98, 0.4);;
+			
+			padding: 10px;
+			.box{
+				margin:0 auto;
+				color:$blue;
+				h2{
+					font-size:50px;
+					
+				}
+			}
+		}
+		
 	}
+}
