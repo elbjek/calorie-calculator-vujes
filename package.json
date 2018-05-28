@@ -8,9 +8,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/markomitranic/Gulp-Sass-Starter-Kit"
+    "url": "git+https://github.com/elbjek/calorie-calculator-vujes.git"
   },
-  "author": "Marko Mitranic <marko.mitranic@gmail.com> (https://github.com/markomitranic)",
+  "author": "Lena Bjekovic (https://github.com/elbjek/calorie-calculator-vujes)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/markomitranic/Gulp-Sass-Starter-Kit/issues"
