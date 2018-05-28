@@ -3,6 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -11,11 +13,11 @@
 		<div class="counter">
 			<h1> MC DONALD'S CALORIE COUNTER</h1>
 			<div class="countdown">
-				<div class="box">
-					<h2>00</h2>
-					<p>CALORIES</p>
-				</div>
-				<div class="box">
+			<counter></counter>
+			<counter></counter>
+			<counter></counter>
+			<counter></counter>
+			<!-- <div class="box">
 					<h2>00</h2>
 					<p>FAT</p>
 				</div>
@@ -26,27 +28,42 @@
 				<div class="box">
 					<h2>00</h2>
 					<p>PROTEIN</p>
-				</div>
-			</div>
-	
-			<div class="food">
-				<ul>
-					<li>{{info.PRO}}</li>
-					<li v-for="food in info">{{info}}</li>
-
-					<!-- <li>Chicken &amp; Sandwiches</li>
-					<li>Salads</li>
-					<li>Snacks and sides</li> -->
-				</ul>
+				</div> -->
 			</div>
 			
+			<tabs> 
+				<tab class="description"name="Burgers" :selected="true" > 
+					<ul  >
+						<li v-for="burger in burgers"><a href="#"> {{burger}}</a> </li>
+					</ul>
+				</tab>
+				
+				<tab class="description" name="Sandwiches &amp; Salads">
+					<ul >
+						<li v-for="sandwich in sandwiches" ><a v-on:click="thisFucc" href="#">{{sandwich}}</a> </li>
+					</ul>
+				</tab>
+				<tab class="description" name="Sides">
+					<ul>
+						<li v-for="snack in sides"  ><a href="#">{{snack}}</a> </li>
+					</ul>
+				</tab>
+				<tab class="description" name="Breakfast">
+					<ul>
+						<li v-for="breakfast in breakfast"><a href="#" >{{breakfast}}</a> </li>
+					</ul>
+				</tab>
+
+			</tabs>
+			<!-- <p class="burger">Burger</p>
+				<ul><li ><a href='#'>{{}}</a></li></ul> -->
+				
+			</div>
 		</div>
 		
-	</div>
-	
-	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-	<script type="text/javascript" src="scripts/vendor.js"></script>
-	<script type="text/javascript" src="scripts/scripts.min.js"></script>
-</body>
-</html>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript" src="scripts/vendor.js"></script>
+		<script type="text/javascript" src="scripts/scripts.min.js"></script>
+	</body>
+	</html>

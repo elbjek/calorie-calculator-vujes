@@ -25,12 +25,51 @@ body{
 			.box{
 				margin:0 auto;
 				color:$blue;
+				background-color: inherit ;
+				border:none;
+				box-shadow: none;
+				padding:0;
 				h2{
 					font-size:50px;
 					
 				}
 			}
 		}
-		
+		.tab{
+			ul{		
+				text-align: center;
+				border-bottom: 2px solid rgba(70, 83, 98, 0.4);
+				li{
+					display: inline;
+					padding:10px;
+					
+					a{
+						margin:10px;
+						color:$red;
+						font-size: 24px;
+						font-weight: bolder;
+						
+						
+						
+					} 
+				}
+			}
+			.description{
+				ul{
+					li{
+						padding:0;
+						display:flex;
+						a{
+							font-weight: 400;
+							font-size: 16px;
+							color:$blue;
+							&:hover{
+							text-decoration: underline;
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
