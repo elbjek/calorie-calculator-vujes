@@ -13,57 +13,31 @@
 		<div class="counter">
 			<h1> MC DONALD'S CALORIE COUNTER</h1>
 			<div class="countdown">
-			<counter></counter>
-			<counter></counter>
-			<counter></counter>
-			<counter></counter>
-			<!-- <div class="box">
-					<h2>00</h2>
-					<p>FAT</p>
-				</div>
-				<div class="box">
-					<h2>00</h2>
-					<p>CARBS</p>
-				</div>
-				<div class="box">
-					<h2>00</h2>
-					<p>PROTEIN</p>
-				</div> -->
+				
 			</div>
 			
-			<tabs> 
-				<tab class="description"name="Burgers" :selected="true" > 
-					<ul  >
-						<li v-for="burger in burgers"><a href="#"> {{burger}}</a> </li>
-					</ul>
-				</tab>
-				
-				<tab class="description" name="Sandwiches &amp; Salads">
-					<ul >
-						<li v-for="sandwich in sandwiches" ><a v-on:click="thisFucc" href="#">{{sandwich}}</a> </li>
-					</ul>
-				</tab>
-				<tab class="description" name="Sides">
-					<ul>
-						<li v-for="snack in sides"  ><a href="#">{{snack}}</a> </li>
-					</ul>
-				</tab>
-				<tab class="description" name="Breakfast">
-					<ul>
-						<li v-for="breakfast in breakfast"><a href="#" >{{breakfast}}</a> </li>
-					</ul>
-				</tab>
 
-			</tabs>
-			<!-- <p class="burger">Burger</p>
-				<ul><li ><a href='#'>{{}}</a></li></ul> -->
-				
+			
+			<ul id="burger">
+				<li  v-for="item in info" >
+					<a href='#' @click.prevent="getItem(item)">{{item.ITEM}}</a>
+				</li>
+			</ul>
+			<div class="selectedItems">
+
+
+				<ul>
+					<li><a href=""></a></li>
+				</ul>
 			</div>
+
+			
 		</div>
-		
-		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-		<script type="text/javascript" src="scripts/vendor.js"></script>
-		<script type="text/javascript" src="scripts/scripts.min.js"></script>
-	</body>
-	</html>
+	</div>
+
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script type="text/javascript" src="scripts/vendor.js"></script>
+	<script type="text/javascript" src="scripts/scripts.min.js"></script>
+</body>
+</html>

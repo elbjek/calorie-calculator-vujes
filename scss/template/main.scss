@@ -1,5 +1,5 @@
 body{
-	background-color: $yellow;
+	background-color: $white;
 	.counter{
 		// height:500px;
 		width:800px;
@@ -10,10 +10,10 @@ body{
 		h1{
 			text-align: center;
 			padding:20px;
-			background-color: $blue;
+			background-color: $yellow;
 			font-size: 25px;
-			color:$white;
-			font-weight: 800;
+			color:$blue;
+			font-weight: 600;
 		}
 		
 		.countdown{
@@ -35,41 +35,7 @@ body{
 				}
 			}
 		}
-		.tab{
-			ul{		
-				text-align: center;
-				border-bottom: 2px solid rgba(70, 83, 98, 0.4);
-				li{
-					display: inline;
-					padding:10px;
-					
-					a{
-						margin:10px;
-						color:$red;
-						font-size: 24px;
-						font-weight: bolder;
-						
-						
-						
-					} 
-				}
-			}
-			.description{
-				ul{
-					li{
-						padding:0;
-						display:flex;
-						a{
-							font-weight: 400;
-							font-size: 16px;
-							color:$blue;
-							&:hover{
-							text-decoration: underline;
-							}
-						}
-					}
-				}
-			}
-		}
+		
 	}
 }
+
