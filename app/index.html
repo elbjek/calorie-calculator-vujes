@@ -8,33 +8,31 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	
+	<!-- //visuals and architecture will be fixed kad sve bude radilo -->
 	<div id="app">
 		<div class="counter">
 			<h1> MC DONALD'S CALORIE COUNTER</h1>
 			<div class="countdown">
 				
-			</div>
-			
-
-			
-			<ul id="burger">
-				<li  v-for="item in info" >
-					<a href='#' @click.prevent="getItem(item)">{{item.ITEM}}</a>
-				</li>
-			</ul>
-			<div class="selectedItems">
-
-
-				<ul>
-					<li><a href=""></a></li>
+				
+				<!-- DISPLAY SELECTED ITEMS -->
+				<ul  class="element">Your items:
+					<li  v-for="item in selectedItems"><a  href="">{{item.name}}</a></li>
 				</ul>
+				
+				
+				<!-- DISPLAY ALL ITEMS -->
+				<ul>
+					<li  v-for="item in info" >
+						<a href='#' @click.prevent="addItems(item)">{{item.ITEM}}</a>
+					</li>
+				</ul>
+				
 			</div>
-
 			
 		</div>
 	</div>
-
+	
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script type="text/javascript" src="scripts/vendor.js"></script>

@@ -7,28 +7,41 @@ var app = new Vue({
     selectedItems: []
 
   },
+
   mounted: function mounted() {
     var _this = this;
 
     axios.get('http://api.myjson.com/bins/61ksm').then(function (response) {
       return _this.info = response.data;
-    });
+    }).then(this.loadItems());
   },
 
+
   methods: {
-    getItem: function getItem(item) {
-
-      //SOME STACKOVERFLOW FUNCTION I DONT UNDERSTAND
-      function getEventTarget(e) {
-        e = e || window.event;
-        return e.target || e.srcElement;
+    loadItems: function loadItems() {
+      console.log("this info sucks");
+      console.log(this.info.length);
+    },
+    addItems: function addItems(item) {
+      //GET SELECTED ITEM 
+      var index = this.info.indexOf(item);
+      for (var i = 0; i < this.info.length; i++) {
+        var clickedItem = this.info[index].ITEM;
+        if (this.info[i].ITEM === clickedItem) {
+          //  console.log(this.info[index].ITEM)
+          this.selectedItems.push({
+            name: this.info[index].ITEM,
+            cal: this.info[index].CAL,
+            carb: this.info[index].CARB,
+            pro: this.info[index].PRO,
+            cat: this.info[index].CAT,
+            sgr: this.info[index].SGR
+          });
+          //delete duplicates
+          this.selectedItems = this.selectedItems.from(new Set(item));
+          return selectedItems;
+        }
       }
-
-      var ul = document.getElementById('burger');
-      ul.onclick = function (event) {
-        var target = getEventTarget(event);
-        alert(target.innerHTML);
-      };
     }
   }
 });
