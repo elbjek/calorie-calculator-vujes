@@ -33,11 +33,14 @@
 				<!-- DISPLAY ALL ITEMS -->
 				
 				<ul>
+					<!-- TITLE -->
 					<li><a @click="showBurgers" href="#">Burgers<br></a></li>
 					<li v-if="burgers"  v-for="item in info" >
 						<a href='#'  v-if="item.CATEGORY == 'BURGERSANDWICH'" @click.prevent="addItems(item)">{{item.ITEM}}</a>
 					</li>
-						<li><a @click="showCafe" href="#">Cafe<br></a></li>
+
+					<!-- title -->
+						<li><a @click="showCafe" href="#">Chicken<br></a></li>
 						<li v-if="cafe"  v-for="item in info" >
 							<a href='#'  v-if="item.CATEGORY == 'MCCAFE'" @click.prevent="addItems(item)">{{item.ITEM}}</a>
 						</li>
