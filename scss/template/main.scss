@@ -10,7 +10,7 @@ body{
 		h1{
 			text-align: center;
 			padding:20px;
-			background-color: $yellow;
+			background-color: $yellow; 
 			font-size: 25px;
 			color:$blue;
 			font-weight: 600;
@@ -18,7 +18,7 @@ body{
 		
 		.countdown{
 			display: flex;
-			flex-direction: column;
+			flex-direction: row;
 			text-align: center;
 			border-bottom: 2px solid rgba(70, 83, 98, 0.4);;
 			padding: 10px;
@@ -28,20 +28,14 @@ body{
 				border:none;
 				box-shadow: none;
 				padding:0;
+				background:none;
 				h2{
 					font-size:50px;
 				}
 			}
-			.element{
-				display:flex;
-				flex-direction: column;
-				// border:none;
-			}
+		
 		}
 		
 	}
 }
 
-.element{
-	border:1px solid black;
-}
