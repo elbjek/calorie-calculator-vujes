@@ -30,9 +30,9 @@
 					<p>Sugar</p>
 				</div>
 			</div>
-
+			<!-- <img v-bind:src="/img/burgers.png" v-bind:alt="Burger"> -->
 			<!-- DISPLAY SELECTED ITEMS -->
-			<div class="selected">Your items:
+			<div class="selected"><p v-if="show">Your items:</p>
 				<ul>
 					<li  v-for="item in selectedItems">
 						<a href="">{{item.name}} 
@@ -43,39 +43,41 @@
 			</div>
 			<!-- DISPLAY ALL ITEMS -->
 			
-			<ul>
+			<ul class="items">
 				<!-- TITLE -->
-				<li><a @click="showBurgers" href="#">Burgers<br></a></li>
+				<h4 @click="showBurgers" >Burgers</h4>
+			
+				
 				<li v-if="burgers"  v-for="item in info" >
 					<a href='#'  v-if="item.CATEGORY == 'BURGERSANDWICH'" @click.prevent="addItems(item)">{{item.ITEM}}</a>
 				</li>
 				
 				<!-- title -->
-				<li><a @click="showSandwich" href="#">Chicken &amp; Sandwiches<br></a></li>
+				<h4 @click="showSandwich" href="#">Chicken &amp; Sandwiches </h4>
 				<li v-if="sandwich"  v-for="item in info" >
 					<a href='#'  v-if="item.CATEGORY == 'CHICKENFISH'" @click.prevent="addItems(item)">{{item.ITEM}}</a>
 				</li>
 				
 				
 				<!-- title -->
-				<li><a @click="showSalad" href="#">Salads<br></a></li>
+				<h4 @click="showSalad" href="#">Salads</h4></li>
 				<li v-if="salad"  v-for="item in info" >
 					<a href='#'  v-if="item.CATEGORY == 'SALAD'" @click.prevent="addItems(item)">{{item.ITEM}}</a>
 				</li>
 				<!-- title -->
-				<li><a @click="showSnack" href="#">Snacks &amp; Sides<br></a></li>
+				<h4 @click="showSnack" href="#">Snacks &amp; Sides</h4>
 				<li v-if="snacks"  v-for="item in info" >
 					<a href='#'  v-if="item.CATEGORY == 'SNACKSIDE'" @click.prevent="addItems(item)">{{item.ITEM}}</a>
 				</li>
 				
 				<!-- title -->
-				<li><a @click="showDrinks" href="#">Drinks<br></a></li>
+				<h4 @click="showDrinks" href="#">Drinks</h4>
 				<li v-if="drinks"  v-for="item in info" >
 					<a href='#'  v-if="item.CATEGORY == 'BEVERAGE'" @click.prevent="addItems(item)">{{item.ITEM}}</a>
 				</li>
 				
 				<!-- title -->
-				<li><a @click="" href="#">MCCaffè <br></a></li>
+				<h4 @click="" href="#">MCCaffè</h4>
 				<li v-if="cafe"  v-for="item in info" >
 					<a href='#'  v-if="item.CATEGORY == 'MCCAFE'" @click.prevent="addItems(item)">{{item.ITEM}}</a>
 				</li>

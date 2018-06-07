@@ -55,7 +55,8 @@ var app = new Vue({
   methods:{
     addItems(item){
       console.log(this.info)
-      //GET SELECTED ITEM 
+      //GET SELECTED ITEM
+      this.show=true; 
       var index = this.info.indexOf(item);
       for( var i=0;i<this.info.length; i++){
         var clickedItem = this.info[index].ITEM;
