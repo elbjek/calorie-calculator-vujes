@@ -13,29 +13,53 @@
 		<div class="counter">
 			<h1> MC DONALD'S CALORIE COUNTER</h1>
 			<div class="countdown">
+
+			<ul>
+				<li ><a href="#">{{totalCalorie}}</a></li>
+				<li ><a href="#">{{totalSugar}}</a></li>
 				
-				
+			
+			</ul>	
 				<!-- DISPLAY SELECTED ITEMS -->
-				<ul  class="element">Your items:
-					<li  v-for="item in selectedItems"><a  href="">{{item.name}}</a></li>
-				</ul>
-				
-				
+				<div>Your items:
+					<ul class="element">
+						<li  v-for="item in selectedItems">
+							<a  href="">{{item.name}} 
+								<button @click.prevent="removeItems(item)">x</button>
+							</a>
+						</li>	
+					</ul>
+				</div>
 				<!-- DISPLAY ALL ITEMS -->
+				
 				<ul>
-					<li  v-for="item in info" >
-						<a href='#' @click.prevent="addItems(item)">{{item.ITEM}}</a>
+					<li><a @click="showBurgers" href="#">Burgers<br></a></li>
+					<li v-if="burgers"  v-for="item in info" >
+						<a href='#'  v-if="item.CATEGORY == 'BURGERSANDWICH'" @click.prevent="addItems(item)">{{item.ITEM}}</a>
 					</li>
-				</ul>
+						<li><a @click="showCafe" href="#">Cafe<br></a></li>
+						<li v-if="cafe"  v-for="item in info" >
+							<a href='#'  v-if="item.CATEGORY == 'MCCAFE'" @click.prevent="addItems(item)">{{item.ITEM}}</a>
+						</li>
+					</ul>
+				<!-- 
+					<p @click="showItems">SANDWICH:</p>
+					<ul v-if="show">	
+						<li  v-for="item in info" >
+							<a href='#' v-if="item.CATEGORY == 'MCCAFE'" @click.prevent="addItems(item)">{{item.ITEM}}</a>
+						</li>
+					</ul> -->
+					
+					<!-- ul>li -->
+					
+				</div>
 				
 			</div>
-			
 		</div>
-	</div>
-	
-	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-	<script type="text/javascript" src="scripts/vendor.js"></script>
-	<script type="text/javascript" src="scripts/scripts.min.js"></script>
-</body>
-</html>
+		
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript" src="scripts/vendor.js"></script>
+		<script type="text/javascript" src="scripts/scripts.min.js"></script>
+	</body>
+	</html>

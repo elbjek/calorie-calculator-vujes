@@ -1,34 +1,48 @@
-
-
 var app = new Vue({
   el: '#app',
   data: {
     info:'',
     selectedItems:[],
-    
+    show:false,
+    burgers:false,
+    sandwiches:false,
+    cafe:false
   },
   
-  mounted () {
-    
+  mounted () { 
     axios
     .get('http://api.myjson.com/bins/61ksm')
     .then(response => (this.info = response.data))
-    .then(this.loadItems())
+
+  },
+  computed:{
+    totalCalorie(){
+      var result = 0;
+      for(var i =0; i<this.selectedItems.length; i++){
+        result += parseInt(this.selectedItems[i].cal)
+      };
+      return result;
+
+    },
+    totalSugar(){
+      var result = 0;
+      for(var i =0; i<this.selectedItems.length; i++){
+        result += parseInt(this.selectedItems[i].sgr)
+      };
+      return result;
+
+    }
   },
  
   methods:{
-    loadItems(){
-      console.log("this info sucks");
-      console.log(this.info.length)
-    }
-    ,
     addItems(item){
+      console.log(this.info)
       //GET SELECTED ITEM 
       var index = this.info.indexOf(item);
       for( var i=0;i<this.info.length; i++){
         var clickedItem = this.info[index].ITEM;
         if(this.info[i].ITEM === clickedItem){
-          //  console.log(this.info[index].ITEM)
+        // ADD ITEM TO THE SELECTED ITEMS ARRAY
           this.selectedItems.push({
             name: this.info[index].ITEM,
             cal: this.info[index].CAL,
@@ -40,11 +54,21 @@ var app = new Vue({
           //delete duplicates
           this.selectedItems = this.selectedItems.from(new Set(item))
           return selectedItems
-        }     
+        }
       }      
     },
-  
-    
+    removeItems(item){
+      console.log("radi")
+      var index = this.selectedItems.indexOf(item);
+      this.selectedItems.splice(index,1);
+    },
+
+    showBurgers(){   
+      this.burgers=true;
+    },
+    showCafe(){
+      this.cafe=true;
+    }
     
   }
 });
