@@ -5,7 +5,10 @@ var app = new Vue({
     selectedItems:[],
     show:false,
     burgers:false,
-    sandwiches:false,
+    sandwich:false,
+    salad:false,
+    snacks:false,
+    drinks:false,
     cafe:false
   },
   
@@ -22,6 +25,21 @@ var app = new Vue({
         result += parseInt(this.selectedItems[i].cal)
       };
       return result;
+    },
+    totalCarbs(){
+      var result = 0;
+      for(var i =0; i<this.selectedItems.length; i++){
+        result += parseInt(this.selectedItems[i].carb)
+      };
+      return result;
+
+    },
+    totalProtein(){
+      var result = 0;
+      for(var i =0; i<this.selectedItems.length; i++){
+        result += parseInt(this.selectedItems[i].pro)
+      };
+      return result;
 
     },
     totalSugar(){
@@ -32,7 +50,7 @@ var app = new Vue({
       return result;
 
     }
-  },
+},
  
   methods:{
     addItems(item){
@@ -48,12 +66,16 @@ var app = new Vue({
             cal: this.info[index].CAL,
             carb: this.info[index].CARB,
             pro: this.info[index].PRO,
-            cat: this.info[index].CAT,
-            sgr:this.info[index].SGR
+            sgr:this.info[index].SGR,
+            sfat:this.info[index].SFAT,
+            tfat:this.info[index].TFAT,
+            cat:this.info[index].CATEGORY
           });
+          console.log(this.selectedItems)
           //delete duplicates
           this.selectedItems = this.selectedItems.from(new Set(item))
-          return selectedItems
+          return selectedItems;
+          
         }
       }      
     },
@@ -64,16 +86,24 @@ var app = new Vue({
     },
 
     showBurgers(){   
-      this.burgers=true;
+      // this.burgers=true;
+    return  this.burgers ? this.burgers = false : this.burgers = true;
+    },
+
+    showSandwich(){
+    return  this.sandwich ? this.sandwich = false : this.sandwich = true;
+    },
+    showSalad(){
+    return  this.salad ? this.salad = false : this.salad = true;
+    },
+    showSnack(){
+    return  this.snacks ? this.snacks = false : this.snacks = true;
+    },
+    showDrinks(){
+    return  this.drinks ? this.drinks = false : this.drinks = true;
     },
     showCafe(){
-      this.cafe=true;
+    return  this.cafe ? this.cafe = false : this.cafe = true;
     }
-    
   }
 });
-
-
-//api http://api.myjson.com/bins/61ksm
-// [{"CAL":"740","FAT":"41","SFAT":"16","TFAT":"1.5","CHOL":"125","SALT":"1480","CARB":"51","FBR":"4","SGR":"14","PRO":"40","ITEM":"Bacon Clubhouse Burger 9.7 oz (274 g)","CATEGORY":"BURGERSANDWICH"},
-// m4pk6
