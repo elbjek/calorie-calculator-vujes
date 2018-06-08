@@ -1,41 +1,46 @@
-body{
-	background-color: $white;
-	.counter{
-		// height:500px;
-		width:800px;
-		margin:0 auto;
-		background-color: $white;
-		border-radius: 20px;
-		
-		h1{
-			text-align: center;
-			padding:20px;
-			background-color: $yellow; 
-			font-size: 25px;
-			color:$blue;
-			font-weight: 600;
-		}
-		
-		.countdown{
-			display: flex;
-			flex-direction: row;
-			text-align: center;
-			border-bottom: 2px solid rgba(70, 83, 98, 0.4);;
-			padding: 10px;
-			.box{
-				margin:0 auto;
-				color:$blue;
-				border:none;
-				box-shadow: none;
-				padding:0;
-				background:none;
-				h2{
-					font-size:50px;
-				}
-			}
-		
-		}
-		
-	}
-}
+.counter{
+    margin:0 auto;
+    
+    // border:1px solid black;
+    display:flex;
+    // justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    h1{
+        font-size: 30px;
+        text-align: center;
+    }
+    .countdown{
+        display:flex;
+        flex-direction: row;
+    }
+    .food{
+        padding-top: 30px;
 
+        display: grid;
+        grid-template-columns:33% 33% 33%;
+        justify-content: center;
+        grid-gap: 15px 10px;
+        .single-block{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: flex-start;
+            // width:400px;
+            h4{
+                // width:30%;
+            }
+            ul{
+                li{
+                    // max-width: 30%;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        }
+        
+    }
+    
+    
+	
+}

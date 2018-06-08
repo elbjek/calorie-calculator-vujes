@@ -4,11 +4,11 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<!-- //visuals and architecture will be fixed kad sve bude radilo -->
+	
 	<div id="app">
 		<div class="counter">
 			<h1> MC DONALD'S CALORIE COUNTER</h1>
@@ -43,45 +43,68 @@
 			</div>
 			<!-- DISPLAY ALL ITEMS -->
 			
-			<ul class="items">
-				<!-- TITLE -->
-				<h4 @click="showBurgers" >Burgers</h4>
+			<div class="food">
+				<div class="single-block">
+					<h4 @click="showBurgers">Burgers <img src="../app/img/burger.png" > </h4>
+					<ul>
+						<li v-if="burgers"  v-for="item in info" >
+							<a href='#'  v-if="item.CATEGORY == 'BURGERSANDWICH'" @click.prevent="addItems(item)">{{item.ITEM}}</a>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="single-block"> 
+					<h4 @click="showSandwich" >Chicken &amp; Sandwiches <img src="../app/img/sandwich.png" ></h4>
+					
+					<ul>
+						<li v-if="sandwich"  v-for="item in info" >
+							<a href='#'  v-if="item.CATEGORY == 'CHICKENFISH'" @click.prevent="addItems(item)">{{item.ITEM}}</a>
+						</li>
+					</ul>
+				</div>
+				<div class="single-block">
+					
+					<h4  @click="showSalad" href="#"> Salads <img src="../app/img/salad.png" > </h4>
+					<ul>
+						<li v-if="salad"  v-for="item in info" >
+							<a href='#'  v-if="item.CATEGORY == 'SALAD'" @click.prevent="addItems(item)">{{item.ITEM}}</a>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="single-block">
+					
+					<h4  @click="showSnack" href="#"> Snacks &amp; Sides <img src="../app/img/fries.png" > </h4>
+					<ul>
+						<li v-if="snacks"  v-for="item in info" >
+							<a href='#'  v-if="item.CATEGORY == 'SNACKSIDE'" @click.prevent="addItems(item)">{{item.ITEM}}</a>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="single-block">
+					
+					<h4  @click="showDrinks" href="#"> Drinks <img src="../app/img/soft-drink.png" > </h4>
+					<ul>
+						<li v-if="drinks"  v-for="item in info" >
+							<a href='#'  v-if="item.CATEGORY == 'BEVERAGE'" @click.prevent="addItems(item)">{{item.ITEM}}</a>
+						</li>
+					</ul>
+				</div>
+				<div class="single-block">
+					
+					<h4  @click="showCafe" href="#"> MCCaffè <img src="../app/img/coffee.png" > </h4>
+					<ul>
+						<li v-if="cafe"  v-for="item in info" >
+							<a href='#'  v-if="item.CATEGORY == 'MCCAFE'" @click.prevent="addItems(item)">{{item.ITEM}}</a>
+						</li>
+					</ul>
+				</div>
+				
+				
+				
+			</div>
 			
-				
-				<li v-if="burgers"  v-for="item in info" >
-					<a href='#'  v-if="item.CATEGORY == 'BURGERSANDWICH'" @click.prevent="addItems(item)">{{item.ITEM}}</a>
-				</li>
-				
-				<!-- title -->
-				<h4 @click="showSandwich" href="#">Chicken &amp; Sandwiches </h4>
-				<li v-if="sandwich"  v-for="item in info" >
-					<a href='#'  v-if="item.CATEGORY == 'CHICKENFISH'" @click.prevent="addItems(item)">{{item.ITEM}}</a>
-				</li>
-				
-				
-				<!-- title -->
-				<h4 @click="showSalad" href="#">Salads</h4></li>
-				<li v-if="salad"  v-for="item in info" >
-					<a href='#'  v-if="item.CATEGORY == 'SALAD'" @click.prevent="addItems(item)">{{item.ITEM}}</a>
-				</li>
-				<!-- title -->
-				<h4 @click="showSnack" href="#">Snacks &amp; Sides</h4>
-				<li v-if="snacks"  v-for="item in info" >
-					<a href='#'  v-if="item.CATEGORY == 'SNACKSIDE'" @click.prevent="addItems(item)">{{item.ITEM}}</a>
-				</li>
-				
-				<!-- title -->
-				<h4 @click="showDrinks" href="#">Drinks</h4>
-				<li v-if="drinks"  v-for="item in info" >
-					<a href='#'  v-if="item.CATEGORY == 'BEVERAGE'" @click.prevent="addItems(item)">{{item.ITEM}}</a>
-				</li>
-				
-				<!-- title -->
-				<h4 @click="" href="#">MCCaffè</h4>
-				<li v-if="cafe"  v-for="item in info" >
-					<a href='#'  v-if="item.CATEGORY == 'MCCAFE'" @click.prevent="addItems(item)">{{item.ITEM}}</a>
-				</li>
-			</ul>
 		</div>
 		
 	</div>
